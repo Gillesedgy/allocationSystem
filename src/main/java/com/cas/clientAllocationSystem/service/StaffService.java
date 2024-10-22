@@ -36,15 +36,8 @@ public class StaffService {
 
     //4 . Find staff regardless of booking status
     public List<Staff> getAllStaff() {
-        logger.info("Fetching all staff members...");
-        List<Staff> staff = staffRepository.findAll();
-
-        if (staff.isEmpty()) {
-            logger.error("No staff members found in the database.");
-            throw new IllegalStateException("No staff members found.");
-        }
-
-        logger.info("Successfully fetched {} staff members.", staff.size());
-        return staff;
+        List<Staff> staffList = staffRepository.findAll();
+        logger.info("Number of staff fetched: {}", staffList.size());
+        return staffList;
     }
 }

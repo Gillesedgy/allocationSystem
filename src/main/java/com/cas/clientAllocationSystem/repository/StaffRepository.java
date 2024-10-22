@@ -14,6 +14,8 @@ public interface StaffRepository extends JpaRepository<Staff, Long> {
     List<Staff> findByName(String name);
 
     List<Staff> findAll();
+
+
 //    @Query("SELECT s FROM Staff s WHERE s.availableFrom <= CURRENT_DATE")
 //    List<Staff> findAvailableStaff();
 //

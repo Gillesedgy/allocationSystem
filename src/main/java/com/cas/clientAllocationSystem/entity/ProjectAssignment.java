@@ -14,7 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "project_assignments",schema = "allocationSystemV2")
+@Table(name = "project_assignments", schema = "allocationSystemV2")
 public class ProjectAssignment {
 
     @Id
@@ -26,7 +26,8 @@ public class ProjectAssignment {
     private Project project;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "staff_id", nullable = false)
+    @JoinColumn(name = "staff_id", referencedColumnName = "id", nullable = false)
+    // referencedColumnName = "id", => when using query in ProjectAssignmentRepo
     private Staff staff;
 
     @Enumerated(EnumType.STRING)

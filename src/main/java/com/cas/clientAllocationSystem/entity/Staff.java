@@ -1,6 +1,7 @@
 package com.cas.clientAllocationSystem.entity;
 
 import com.cas.clientAllocationSystem.Enum.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "staff", schema = "allocationSystemV2")
+@Table(name = "staff", schema = "allocation_systemv2")
 public class Staff {
 
     @Id
@@ -43,6 +44,7 @@ public class Staff {
     private Set<Skill> skills = new HashSet<>();
 
     @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<ProjectAssignment> assignments = new HashSet<>();
 }
 

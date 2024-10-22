@@ -28,11 +28,11 @@ public class ProjectService {
                 .orElseThrow(() -> new IllegalArgumentException("Project not found"));
         Staff staff = staffRepository.findById(staffId)
                 .orElseThrow(() -> new IllegalArgumentException("Staff not found"));
-//        List<ProjectAssignment> currentAssignments =
-//                assignmentRepository.findCurrentAssignments(staffId);
-//        if (!currentAssignments.isEmpty()) {
-//            throw new IllegalArgumentException("Staff is already assigned to another active project.");
-//        }
+        List<ProjectAssignment> currentAssignments =
+                assignmentRepository.findCurrentAssignments(staffId);
+        if (!currentAssignments.isEmpty()) {
+            throw new IllegalArgumentException("Staff is already assigned to another active project.");
+        }
 
         // Create new project assignment
         ProjectAssignment assignment = new ProjectAssignment(null, project, staff, staff.getRole(), startDate, endDate, null);
