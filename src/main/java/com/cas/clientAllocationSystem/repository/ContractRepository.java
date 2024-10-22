@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ContractRepository extends JpaRepository<Contract, Long> {
+    List<Contract> findAllById(Long clientId);
 
     // Find all contracts for a specific client
     List<Contract> findByClient_Id(Long clientId);
