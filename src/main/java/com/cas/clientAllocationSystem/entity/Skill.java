@@ -1,4 +1,4 @@
-package com.cas.clientAllocationSystem.Model;
+package com.cas.clientAllocationSystem.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,7 +24,5 @@ public class Skill {
 
     @ManyToMany(mappedBy = "skills", fetch = FetchType.LAZY)
     private Set<Staff> staffMembers = new HashSet<>();
-
-
 }
 

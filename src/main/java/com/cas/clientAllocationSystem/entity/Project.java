@@ -1,4 +1,4 @@
-package com.cas.clientAllocationSystem.Model;
+package com.cas.clientAllocationSystem.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -38,7 +38,5 @@ public class Project {
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ProjectAssignment> assignments = new HashSet<>();
-
-    // Getters and Setters
 }
 

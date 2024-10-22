@@ -1,4 +1,4 @@
-package com.cas.clientAllocationSystem.Model;
+package com.cas.clientAllocationSystem.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,11 +8,12 @@ import lombok.NoArgsConstructor;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "clients",schema = "allocationSystemV2")
+@Entity
+@Table(name = "clients", schema = "allocationSystemV2")
 public class Client {
 
     @Id

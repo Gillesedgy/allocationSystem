@@ -1,4 +1,4 @@
-package com.cas.clientAllocationSystem.Model;
+package com.cas.clientAllocationSystem.entity;
 
 import com.cas.clientAllocationSystem.Enum.Role;
 import jakarta.persistence.*;

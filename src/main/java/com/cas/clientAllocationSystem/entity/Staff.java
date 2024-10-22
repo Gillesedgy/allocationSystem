@@ -1,14 +1,20 @@
-package com.cas.clientAllocationSystem.Model;
+package com.cas.clientAllocationSystem.entity;
 
 import com.cas.clientAllocationSystem.Enum.Role;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "staff",schema = "allocationSystemV2")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "staff", schema = "allocationSystemV2")
 public class Staff {
 
     @Id
@@ -38,7 +44,5 @@ public class Staff {
 
     @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ProjectAssignment> assignments = new HashSet<>();
-
-
 }
 

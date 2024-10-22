@@ -1,4 +1,4 @@
-package com.cas.clientAllocationSystem.Model;
+package com.cas.clientAllocationSystem.entity;
 
 import com.cas.clientAllocationSystem.Enum.BillingPeriod;
 import jakarta.persistence.*;
@@ -32,12 +32,12 @@ public class Invoice {
     @Column(nullable = false)
     private LocalDate invoiceDate;
 
-//    @Enumerated(EnumType.STRING)
-//    @Column(nullable = false)
-//    private BillingPeriod billingPeriod;
-
-    @Column(name ="billing_peirod", nullable = false)
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private BillingPeriod billingPeriod;
+
+//    @Column(name ="billing_peirod", nullable = false)
+//    private BillingPeriod billingPeriod;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(

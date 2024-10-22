@@ -1,4 +1,4 @@
-package com.cas.clientAllocationSystem.Model;
+package com.cas.clientAllocationSystem.entity;
 
 import com.cas.clientAllocationSystem.Enum.Role;
 import jakarta.persistence.*;
@@ -42,5 +42,4 @@ public class ProjectAssignment {
     @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<TimeLog> timeLogs = new HashSet<>();
 
-    // Getters and Setters
 }
