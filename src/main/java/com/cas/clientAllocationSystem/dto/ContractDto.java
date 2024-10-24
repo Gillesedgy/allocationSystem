@@ -16,4 +16,5 @@ public class ContractDto {
     private LocalDate startDate;
     private LocalDate endDate;
     private String billingSchedule;  // Enum as String
+
 }

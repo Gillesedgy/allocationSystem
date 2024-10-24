@@ -11,10 +11,16 @@ import java.util.List;
 
 @Repository
 public interface StaffRepository extends JpaRepository<Staff, Long> {
+
     List<Staff> findByName(String name);
 
     List<Staff> findAll();
 
+    @Query("SELECT s FROM Staff s WHERE s.availableFrom <= CURRENT_DATE AND s NOT IN (SELECT pa.staff FROM ProjectAssignment pa WHERE CURRENT_DATE BETWEEN pa.startDate AND pa.endDate)")
+    List<Staff> findAvailableStaff();
+
+    @Query("SELECT s FROM Staff s JOIN s.skills sk WHERE sk.name = :skillName")
+    List<Staff> findStaffBySkills(@Param("skillName") String skillName);
 
 //    @Query("SELECT s FROM Staff s WHERE s.availableFrom <= CURRENT_DATE")
 //    List<Staff> findAvailableStaff();
